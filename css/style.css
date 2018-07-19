@@ -1,0 +1,572 @@
+/* [11] fontspace.com "Font for Logo". fontspace.com [Online]. Available. "http://www.fontspace.com/billy-argel/shine-personal-use".[Accessed On: 28th June 2018]. */
+@font-face {
+    font-family: Shine;
+    src: url(fonts/Shine.ttf);
+}
+
+@font-face {
+    font-family: Lucky;
+    src: url(fonts/LuckiestGuy-Regular.ttf);
+}
+
+/* End of reference */
+
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.cb{
+    clear: both;
+}
+
+.navbar {
+    padding: 30px 0px 10px 0px;
+}
+
+.nav li a {
+    font-size: 18px;
+    color: #fff !important;
+    font-weight: bold;
+    font-family: "Comic Sans MS, Comic Sans, cursive";
+}
+
+.nav li a:hover {
+
+    color: #842380 !important;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    color: #fff !important;
+    font-family: Shine;
+}
+
+.navbar-brand span {
+    color: #842380;
+}
+
+.bg-primary {
+    background-color: rgba(0, 119, 183, 0.7);
+}
+
+.clr-wht {
+    color: #fff;
+}
+
+.sldr {
+    margin-top: 60px;
+}
+
+.sldr img {
+    display: block;
+    width: 100%;
+}
+
+.nav-btns li {
+    margin-left: 5px;
+    float: left;
+}
+
+.nav-btns li a:hover {
+    background-color: #842380;
+    color: #fff !important;
+    border: 1px solid #fff;
+}
+
+.nav-btns li a {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.full-width {
+    padding: 0px;
+}
+
+.bx-wrapper {
+    border: none !important;
+}
+
+.bx-pager {
+    display: none;
+}
+
+.btn-donate, .btn-post-event, .btn-find {
+    background-color: #4ec0b0 !important;
+    border: none;
+    width: 30%;
+    text-transform: uppercase;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.btn-donate:hover, .btn-post-event:hover, .btn-find:hover {
+    opacity: 0.8;
+}
+
+.btn-donate {
+    background-color: #a59dc9 !important;
+}
+
+.btn-post-event {
+    margin: 0px 3%;
+    background-color: #f5718f !important;
+}
+
+.what-we-do {
+    width: 60%;
+    margin-top: 70px !important;
+}
+
+.what-we-do h1 {
+    color: #0076bc;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.what-we-do p {
+    line-height: 30px;
+    font-size: 18px;
+}
+
+footer {
+    margin-top: 100px;
+    padding: 15px 0px;
+}
+
+footer p {
+    float: left;
+}
+
+footer ul {
+    float: right;
+}
+
+footer ul, footer p {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer li a {
+    color: #fff;
+}
+
+footer li a:hover {
+    color: #842380 !important;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------- Styling Event list page -------------------------------------------------------- */
+.event-list-main, .faq-main{
+    margin-top: 150px;
+}
+.registration-main, .bottom-space{
+    margin-bottom: 150px;
+}
+.bottom-space{
+    margin-bottom: 200px;
+}
+.faq-main{
+    margin-bottom: 400px;
+}
+.fonts-lucky{
+    font-family: Lucky;
+    padding-bottom: 2%;
+    border-bottom: 1px solid black;
+    font-size:24px;
+    text-align : center;
+}
+/*EVENTS LISTING ===================================================================================*/
+/*REFERENCE: https://stackoverflow.com/questions/18262972/box-shadow-on-bootstrap-3-container*/
+.border-container{
+
+    margin-top: 50px;
+    box-shadow: 0 0 30px #BDBDBD;
+    padding:0 15px 20px 15px;
+}
+.wt{
+  font-weight: bold;
+}
+.btn-post{
+  display: block;
+  width: 200px;
+  margin: auto;
+  border: 1px solid black ;
+  padding: 2px 20px;
+  background-color: #0076bc;
+  color: #ffffff;
+  text-align: center; 
+  
+}
+.btn-post:hover{ 
+  color: #0076bc; 
+  background: transparent; 
+  text-decoration: none;
+} 
+
+.btn-reg-event {
+    border: 2px solid #0076bc;
+    color: #0076bc;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 40px !important;
+    border-radius: 0px;
+    margin-top: 30px;
+    background: transparent;
+}
+
+.btn-reg-event:hover {
+    color: #fff;
+    background-color: #0076bc;
+}
+.events-heading{
+    display: block;
+    text-align: center; 
+}
+
+/* ------------------------------------------------- Styling Available food list page -------------------------------------------------------- */
+
+.available-food-container {
+    margin-top: 150px;
+}
+
+.available-food-container h1 {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #0076bc;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 24px;
+    font-weight: bold;
+}
+
+.available-food-container .lead {
+    font-size: 18px;
+}
+
+.food-list li {
+    list-style: none;
+    margin: 70px 0px;
+}
+
+.food-list li p {
+    /*margin: 20px 0px !important;*/
+}
+
+.food-list li .btn-get-food, .get-food li .btn-get-food {
+    border: 2px solid #0076bc;
+    color: #0076bc;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 40px !important;
+    border-radius: 0px;
+    margin-top: 30px;
+    background: transparent;
+}
+
+.food-list li .btn-get-food:hover, .get-food li .btn-get-food:hover {
+    color: #fff;
+    background-color: #0076bc;
+}
+
+.hide-food-itm {
+    display: none;
+}
+
+.food-type-select {
+    font-size: 22px;
+    border: 3px solid #0076bc !important;
+    background-color: transparent;
+    width: 200px;
+}
+
+/* ------------------------------------------------------ Styling Donate Food Form ------------------------------------------------------------ */
+
+/* Reference : Advance web development assignment 1 */
+.donate-food-form-sec {
+    width: 60%;
+    border: 2px solid #0076bc;
+    border-radius: 10px;
+    margin: 150px auto 100px auto;
+    padding: 50px;
+    /*background: linear-gradient(#4fc3f7, #b3e5fc);*/
+    box-shadow: 4px 6px 53px 0px rgba(0, 0, 0, 0.75);
+}
+
+.donate-food-form-sec h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+    /* color: #fff;*/
+    margin: 10px 0px;
+    font-weight: bold;
+    color: #0076bc;
+}
+
+.donate-food-form-sec form span {
+    font-family: 'Open Sans', sans-serif;
+    color: #0076bc;
+    font-size: 16px;
+}
+
+.donate-food-form-sec form input[type=text], .donate-food-form-sec form input[type=datetime-local], .donate-food-form-sec form input[type=password], .donate-food-form-sec form select {
+    width: 100%;
+    /*height: 30px;*/
+    /*border-radius: 5px;*/
+    padding: 12px;
+    border: 1px solid #0076bc;
+    /*margin: 5px 0px 20px 0px;*/
+    background-color: transparent;
+    color: #0076bc;
+}
+
+.donate-food-form-sec form input[type=submit] {
+    font-family: "Comic Sans MS, Comic Sans, cursive";
+}
+
+.donate-food-form-sec form input[type=submit]:hover {
+    background-color: #842380;
+    color: #fff !important;
+    border: 1px solid #fff;
+}
+
+.donate-food-form-sec form select {
+    border: 1px solid #0076bc !important;
+    font-size: 14px;
+    height: 42px;
+}
+
+.donate-food-form-sec form textarea {
+    border: 1px solid #0076bc;
+    margin: 5px 0px 20px 0px;
+    background-color: transparent;
+    color: #0076bc;
+    width: 100%;
+    /*border-radius: 5px;*/
+}
+
+#form-donate .error {
+    color: #842380;
+}
+
+/* End of Reference: Assignment 1 */
+
+/* Reference Geolocation : https://developers.google.com/maps/documentation/javascript/examples/places-searchbox */
+#map {
+    height: 40%;
+    width: 45%;
+    margin: auto;
+    top: -90px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* End of reference Geolocation */
+
+/* ------------------------------------------------------ Responsive Design ------------------------------------------------------------ */
+
+@media only screen and (max-width: 992px) {
+    .btn-donate, .btn-post-event, .btn-find {
+        font-size: 16px !important;
+    }
+        .imgs,.services{
+    display: block;
+    width: 80%;
+    margin: 5% auto 5% auto ;
+    }
+    .btn-services a{
+        display: block;
+        width: 150px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-donate, .btn-post-event, .btn-find {
+        font-size: 14px !important;
+    }
+
+    .what-we-do {
+        width: 70% !important;
+    }
+
+    .donate-food-form-sec {
+        width: 80% !important;
+    }
+
+    #map {
+        width: 75%;
+    }
+    .imgs{
+    display: block;
+    margin: 5% auto 5% auto ;
+    }
+
+    .get-food{
+    width: 80% !important;
+    margin: 100px auto 0px auto !important;
+    float: none !important;
+    }
+    .get-food-map{
+    width: 80% !important;
+    float: none !important;
+    margin: 0px auto !important;
+    }
+
+    .imgs,.services{
+    display: block;
+    width: 80%;
+    margin: 5% auto 5% auto ;
+    }
+    .btn-services a{
+        display: block;
+        width: 150px;
+        margin: auto;
+        
+    }
+
+}
+
+@media only screen and (max-width: 530px) {
+    .btn-donate, .btn-post-event, .btn-find {
+        float: none !important;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .what-we-do {
+        width: 80% !important;
+    }
+
+    .what-we-do h1 {
+        font-size: 20px;
+    }
+
+    .what-we-do p {
+        font-size: 16px;
+    }
+
+    footer li a, footer ul, footer p {
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+}
+
+/*-----------------------------------------EVENT FORM STYLING -------------------------------------*/
+.eventForm
+{
+    margin-top: 10%;
+}
+
+.dateStyle
+{
+    width: 150px;
+}
+
+/*-------------------------------------CONTACT US STYLING --------------------------------------- */
+
+.contact-us, .get-food
+{
+    margin-top: 150px;
+}
+.contact-us h3, .get-food h3{
+    color: #0076bc;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.get-food h3{
+    margin-bottom: 20px;
+}
+.get-food ul li{
+    list-style: none;
+}
+
+
+/*-------------------------------------Get Food STYLING --------------------------------------- */
+.get-food{
+    width: 50%;
+    float: left;
+}
+.get-food-map{
+    width: 45%;
+    float: right;
+    margin-top: 255px !important;
+}
+
+/*-----------------------------------------BOOKING CONFIRMATION PAGE STYLING----------------------------------- */
+.foodConfirmation {
+
+    background-image: url("../images/foodConfirmationImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 34em;
+}
+
+.tableHeader {
+    text-align: center;
+}
+
+.timer {
+margin-top: 2.5em;
+margin-left: 5em;
+margin-bottom: 3em;
+text-align: center;
+width:15em;
+
+}
+
+.heading1 {
+
+    text-align: center;
+    margin-top: 8em;
+    color: green;
+}
+
+.heading2 {
+margin-top: 7em;
+margin-left: 27em;
+margin-bottom: 2em;
+width: 30%;
+text-align: center;
+background-color: black;
+opacity: .8;
+color: red;
+
+}
+
+.timerImage {
+
+    margin-top:0.7em;
+
+}
+.eventForm
+{
+    margin-top: 10%;
+}
+
+.dateStyle
+{
+    width: 150px;
+}
+
+.contactUS
+{
+
+    color: red;
+}
