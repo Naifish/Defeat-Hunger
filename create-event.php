@@ -47,7 +47,7 @@ The code wasn't much significantly modified, I removed all the unnecessary styli
 -->
 <div id="map"></div>
 <!-- End of Reference ============================================================================== -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum6nRIs04npnUan69qTmL_dCh4NG3qDE&libraries=places&callback=initAutocomplete"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvWZqtPJD4meUjubfkecOeAJuB-sjI56M&libraries=places&callback=initAutocomplete"
         async defer></script>
 <script src="js/donate-food-map.js"></script>
 <!-- Footer-->

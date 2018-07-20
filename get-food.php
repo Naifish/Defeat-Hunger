@@ -7,7 +7,7 @@ require 'includes/header.php';
 ?>
       <!-- Reference from https://www.w3schools.com/howto/howto_css_contact_section.asp -->
 <div class="container get-food">
-    <input id="address" type="hidden" value="Dalhousie University">
+    <input id="address" type="hidden" value="1 Sheradon Place, Halifax, NS, Canada">
             <ul>
             <li data-foodType="fast-food"><h3>32 Chicken Burgers</h3><span class="locationFood"><i
                     class="glyphicon glyphicon-map-marker"></i> McDonalds, Clayton Park</span>
