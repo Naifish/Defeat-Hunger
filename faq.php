@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+require 'includes/header.php';
+?>
 <!-- Accordion refereence: 
 https://getbootstrap.com/docs/3.3/javascript/ -->    
 <div class="container faq-main">

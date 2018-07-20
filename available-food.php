@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+require 'includes/header.php';
+?>
 <!--  UI Idea: http://www.jobscan.ae/jobsearch/  -->
 <div class="available-food-container container">
     <h1>Find Food</h1>

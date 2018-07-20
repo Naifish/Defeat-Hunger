@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+if(!isset($_SESSION) || empty($_SESSION['email'])){ header('location:login.php');}
+require 'includes/header.php';
+?>
 <!-- Bootstrap form Reference:
   getbootstrap.com. "Custom styles - Bootstrap form" [Online].
   Available. "getbootstrap.com/docs/4.0/components/forms/?".[Accessed On: 28th June 2018].

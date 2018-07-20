@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+require 'includes/header.php';
+?>
 <div class="container event-list-main">
     <h2 class="events-heading">Check out the events happening around you</h2>
     <p><a class="btn-post" href="create-event.php">Post an event</a></p>

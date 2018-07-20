@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+require 'includes/header.php';
+?>
 
 <div class="container-fluid full-width">
     <div class="sldr">

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+if(!isset($_SESSION) || empty($_SESSION['email'])){ header('location:login.php');}
+require 'includes/header.php';
+?>
       <!-- Reference from https://www.w3schools.com/howto/howto_css_contact_section.asp -->
 <div class="container get-food">
     <input id="address" type="hidden" value="Dalhousie University">

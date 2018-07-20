@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+require 'includes/header.php';
+if(!isset($_SESSION) || empty($_SESSION['email'])){ header('location:login.php');}
+?>
 <div class="container">
     <div class="row">
         <div class="heading1 col-sm">
