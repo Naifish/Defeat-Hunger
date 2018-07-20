@@ -213,27 +213,7 @@ require 'includes/header.php';
             </div>
         </form>
     </section>
-
-    <div class="modal fade" id="getCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" ng-click="cancel()">Close</button>
-                    <button type="button" class="btn btn-primary" ng-click="ok()">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
+    <!-- Reference: Bootstrap Modal - https://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -258,12 +238,7 @@ require 'includes/header.php';
 
         </div>
     </div>
-    <!--<section class="custom-modal">
-        <h1>Thank you for donating food</h1>
-        <p>We really appreciate your contribution.</p>
-        <p>Someone will soon pick food from you.</p>
-    </section>-->
-    <!-- End of Reference: Assignment 1 -->
+    <!-- End of Bootstrap Modal -->
 </div>
 <div id="map"></div>
 <?php
