@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+if(!isset($_SESSION) || empty($_SESSION['email'])){ header('location:login.php');}
+require 'includes/header.php';
+?>
 <div class="container donate-food-form">
     <!-- Reference : Advance web development assignment 1 -->
     <section class="donate-food-form-sec">
@@ -46,7 +50,9 @@
     <!-- End of Reference: Assignment 1 -->
 </div>
 <div id="map"></div>
-<?php include 'includes/footer.php';?>
+<?php
+include 'includes/footer.php';
+?>
 <script>
     //Reference BX Slider : https://bxslider.com
     // [8] Steven Wanderski Chicago Web Developer "Responsive Slider". bxslider.com [Online]. Available. "https://bxslider.com".[Accessed On: 28th June 2018].

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'includes/header.php'; ?>
+<?php
+session_start();
+require 'includes/header.php';
+?>
 <!-- Reference from https://www.w3schools.com/howto/howto_css_contact_section.asp -->
 
 <div class="container our-donors">

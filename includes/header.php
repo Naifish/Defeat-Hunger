@@ -1,4 +1,11 @@
 <?php
+
+if (isset($_GET['logout']) && $_GET['logout']==true){
+    unset($_SESSION["email"]);
+    session_destroy();
+    header('location:index.php');
+}
+
 ?>
 
 <head>
@@ -44,8 +51,12 @@
             </ul>
 
             <ul class="nav navbar-right nav-btns">
-                <li><a href="login.php" class="btn btn-success navbar-btn">SignIn</a></li>
-                <li><a href="registration.php" class="btn btn-warning navbar-btn">Sign Up</a></li>
+                <?php if(isset($_SESSION) && !empty($_SESSION['email'])){ ?>
+                    <li><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?logout=true" class="btn btn-success navbar-btn">Logout</a></li>
+                <?php } else { ?>
+                    <li><a href="login.php" class="btn btn-success navbar-btn">SignIn</a></li>
+                    <li><a href="registration.php" class="btn btn-warning navbar-btn">Sign Up</a></li>
+                <?php } ?>
             </ul>
         </div>
     </div>
