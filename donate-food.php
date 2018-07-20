@@ -11,6 +11,8 @@ $date = '';
 $time;
 $foodDes;
 $userID = 0;
+$userInfoUpdate=false;
+$numOfDonations = 0;
 require 'includes/connection.php';
 
 if (isset($_POST['btn-donate'])) {
@@ -89,6 +91,7 @@ if (isset($_POST['btn-donate'])) {
             if ($getUserID->rowCount() > 0) {
                 while ($row = $getUserID->fetch()) {
                     $userID = $row['id'];
+                    $numOfDonations = $row['numOfDonations'];
                 }
             }
             try {
@@ -96,7 +99,30 @@ if (isset($_POST['btn-donate'])) {
 
                 if ($result == true) {
                     /*header('location:available-food.php');*/
-                    echo "food added success fully";
+
+                    /* Updade number of donations done by this user */
+                    if (!isset($numOfDonations)){
+                        $numOfDonations=0;
+                        $numOfDonations++;
+                    }else{
+                        $numOfDonations++;
+                    }
+
+                    try{
+                        $updateDonationCount= $connect->prepare("UPDATE users SET numOfDonations='$numOfDonations' WHERE email= :email");
+                        $updateDonationCount->execute(array(
+                            "email" => $_SESSION['email']
+                        ));
+                    }
+                    catch (Exception $ex){
+                        die("Error in query execution:" .$ex);
+                    }
+                    if($updateDonationCount->rowCount()>0){
+                        $userInfoUpdate=true;
+                    }
+                    else{
+                        $errors[]="Sorry. We are not able to update your information";
+                    }
                 }
             } catch (Exception $ex) {
                 die("Error in execution of query:" . $ex);
@@ -187,13 +213,41 @@ require 'includes/header.php';
             </div>
         </form>
     </section>
-    <!-- End of Reference: Assignment 1 -->
+    <!-- Reference: Bootstrap Modal - https://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <form action="available-food.php" method="post">
+                        <button type="submit" class="close">&times;</button>
+                    </form>
+                    <h4 class="modal-title">Thank you for this donation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>We really appreciate your contribution.</p>
+                    <p>Someone will soon pickup the food from the given address.</p>
+                </div>
+                <div class="modal-footer">
+                    <form action="available-food.php" method="post">
+                        <input type="submit" class="btn btn-default" value="Close">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End of Bootstrap Modal -->
 </div>
 <div id="map"></div>
 <?php
 include 'includes/footer.php';
 ?>
 <script>
+    <?php if ($userInfoUpdate==true){ $userInfoUpdate=false; ?>
+    $("#myModal").modal('show');
+    <?php } ?>
     //Reference BX Slider : https://bxslider.com
     // [8] Steven Wanderski Chicago Web Developer "Responsive Slider". bxslider.com [Online]. Available. "https://bxslider.com".[Accessed On: 28th June 2018].
     // Changes in default options
