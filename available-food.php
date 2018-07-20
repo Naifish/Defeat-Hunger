@@ -21,15 +21,12 @@ try {
         die("Error in execution of query:" .$ex);
     }
 
-
     if ($getFood->rowCount() > 0) {
         while ($donation = $getFood->fetch(PDO::FETCH_OBJ)) {
             /*echo $donation->availTime ."<br>";
             echo date("h:i:s")."<br>";*/
             $donations[]=$donation;
         }
-    } else {
-        echo '{"Response": {"Message":"Student does not have any image."}}';
     }
 }
 catch(PDOException $e)
@@ -108,45 +105,6 @@ require 'includes/header.php';
             <div></div>
             <a href="get-food.php?id=<?php echo $food->id; ?>" class="btn btn-get-food">Get Food</a></li>
         <?php }} else { echo "<h1>Food not available. Please come later.</h1>"; } ?>
-
-        <li data-foodType="vegetables"><h3>Tomatos and Onions </h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Walmart, Mumfort Terminal</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero
-                est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-                urna pretium, gravida nisl ut, semper nisi.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 12 Jun 18 |</span><span> Get before 14 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
-        <li data-foodType="meat"><h3>18 KG Chicken </h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Mezza, Halifax Shoping Center</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Nullam
-                scelerisque eget ipsum a maximus. Vivamus quis urna pretium, gravida nisl ut, semper nisi. Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna.Nullam scelerisque eget ipsum
-                a maximus. Vivamus quis urna pretium, gravida nisl ut, semper nisi. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero est, feugiat sed sapien eu,
-                rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis urna pretium, gravida nisl ut,
-                semper nisi.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 24 Jun 18 |</span><span> Get before 25 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
-        <li data-foodType="dairy-products"><h3>30 Eggs </h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Apt 893, Park Victoria</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero
-                est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-                urna pretium, gravida nisl ut, semper nisi.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 07 Jun 18 |</span><span> Get before 27 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
-        <li data-foodType="meat"><h3>5 Chicken Shawrma</h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Mezza, Halifax Shoping Center</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero
-                est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-                urna pretium, gravida nisl ut, semper nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                semper pellentesque magna. Aliquam libero est, feugiat sed sapien eu, rhoncus sodales mi. Nullam
-                scelerisque eget ipsum a maximus.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 27 Jun 18 |</span><span> Get before 27 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
     </ul>
 </div>
 <!--  End of UI Idea  -->
@@ -163,7 +121,6 @@ require 'includes/header.php';
             $('.food-list li[data-foodType="' + selectedFoodType + '"]').removeClass('hide-food-itm');
         }
     });
-
     //End of Dropdown search
 
 </script>
