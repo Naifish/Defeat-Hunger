@@ -55,7 +55,7 @@ require 'includes/header.php';
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum6nRIs04npnUan69qTmL_dCh4NG3qDE&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv8YrEN27xlm7emSwfGGa-CFuD9LlsuE8&callback=initMap">
     </script>
     <!-- End of reference: Geo Locator -->
 </body>

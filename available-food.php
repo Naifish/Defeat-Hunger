@@ -2,6 +2,79 @@
 <html lang="en">
 <?php
 session_start();
+$id;$foodType;$quantity;$address;$availDate;$availTime;$description;
+$donations=Array();
+require 'includes/connection.php';
+
+try {
+    $connect = new PDO("mysql:host=$servername;dbname=".$dbName, $username, $password);
+    $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    try{
+        $getFood= $connect->prepare("SELECT * FROM donations WHERE availDate>=:availDate ORDER BY id DESC");
+        $getFood->execute(array(
+            "availDate"=>date("Y-m-d")
+        ));
+        /*$getFood->execute();*/
+    }
+    catch (Exception $ex){
+        die("Error in execution of query:" .$ex);
+    }
+
+    if ($getFood->rowCount() > 0) {
+        while ($donation = $getFood->fetch(PDO::FETCH_OBJ)) {
+            /*echo $donation->availTime ."<br>";
+            echo date("h:i:s")."<br>";*/
+            $donations[]=$donation;
+        }
+    }
+}
+catch(PDOException $e)
+{
+    echo "Connection failed: " . $e->getMessage()."<br>";
+}
+
+/* Call this function when you want to show user friendly date */
+function getFriendlyDate($date){
+    //2018-07-20 to 1 Jun 2018
+    $dateArr=(explode("-",$date));
+    return $dateArr[2]." ".getFriendlyMonth($dateArr[1])." ".$dateArr[0];
+}
+function getFriendlyMonth($month)
+{
+    switch ($month) {
+        case 1:
+            return "Jan";
+        case 2:
+            return "Feb";
+        case 3:
+            return "Mar";
+        case 4:
+            return "Apr";
+        case 5:
+            return "May";
+        case 6:
+            return "Jun";
+        case 7:
+            return "Jul";
+        case 8:
+            return "Aug";
+        case 9:
+            return "Sep";
+        case 10:
+            return "Oct";
+        case 11:
+            return "Nov";
+        case 12:
+            return "Dec";
+        default:
+            return $month;
+    }
+}
+
+
+
+
 require 'includes/header.php';
 ?>
 <!--  UI Idea: http://www.jobscan.ae/jobsearch/  -->
@@ -22,54 +95,16 @@ require 'includes/header.php';
 </div>
 <div class="container food-list">
     <ul>
-        <li data-foodType="fast-food"><h3>32 Chicken Burgers</h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> McDonalds, Clayton Park</span>
+        <?php if (count($donations)>0){ foreach ($donations as $food){ ?>
+        <li data-foodType="<?php echo $food->foodType; ?>"><h3><?php echo $food->foodName; ?></h3><span class="locationFood"><i
+                        class="glyphicon glyphicon-map-marker"></i> <?php echo $food->address; ?></span>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero
-                est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-                urna pretium, gravida nisl ut, semper nisi. Nullam scelerisque eget ipsum a maximus. Vivamus quis urna
-                pretium, gravida nisl ut, semper nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                semper pellentesque magna.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 1 Jun 18 |</span><span> Get before 27 Jul 18</span>
+            <p><?php echo $food->description; ?></p><span><i class="glyphicon glyphicon-time"></i> Posted on <?php echo getFriendlyDate($food->postedDate); ?> |</span><span> Get before <?php echo getFriendlyDate($food->availDate);
+            $timeArr=explode(":",$food->availTime); echo " ".$timeArr[0].":".$timeArr[1];?>
+            </span>
             <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
-        <li data-foodType="vegetables"><h3>Tomatos and Onions </h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Walmart, Mumfort Terminal</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero
-                est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-                urna pretium, gravida nisl ut, semper nisi.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 12 Jun 18 |</span><span> Get before 14 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
-        <li data-foodType="meat"><h3>18 KG Chicken </h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Mezza, Halifax Shoping Center</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Nullam
-                scelerisque eget ipsum a maximus. Vivamus quis urna pretium, gravida nisl ut, semper nisi. Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna.Nullam scelerisque eget ipsum
-                a maximus. Vivamus quis urna pretium, gravida nisl ut, semper nisi. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero est, feugiat sed sapien eu,
-                rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis urna pretium, gravida nisl ut,
-                semper nisi.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 24 Jun 18 |</span><span> Get before 25 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
-        <li data-foodType="dairy-products"><h3>30 Eggs </h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Apt 893, Park Victoria</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero
-                est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-                urna pretium, gravida nisl ut, semper nisi.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 07 Jun 18 |</span><span> Get before 27 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
-        <li data-foodType="meat"><h3>5 Chicken Shawrma</h3><span class="locationFood"><i
-                        class="glyphicon glyphicon-map-marker"></i> Mezza, Halifax Shoping Center</span>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero
-                est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-                urna pretium, gravida nisl ut, semper nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                semper pellentesque magna. Aliquam libero est, feugiat sed sapien eu, rhoncus sodales mi. Nullam
-                scelerisque eget ipsum a maximus.</p><span><i class="glyphicon glyphicon-time"></i> Posted on 27 Jun 18 |</span><span> Get before 27 Jun 18</span>
-            <div></div>
-            <a href="get-food.php" class="btn btn-get-food">Get Food</a></li>
+            <a href="get-food.php?id=<?php echo $food->id; ?>" class="btn btn-get-food">Get Food</a></li>
+        <?php }} else { echo "<h1>Food not available. Please come later.</h1>"; } ?>
     </ul>
 </div>
 <!--  End of UI Idea  -->
@@ -86,7 +121,6 @@ require 'includes/header.php';
             $('.food-list li[data-foodType="' + selectedFoodType + '"]').removeClass('hide-food-itm');
         }
     });
-
     //End of Dropdown search
 
 </script>

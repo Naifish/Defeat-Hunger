@@ -32,7 +32,7 @@ if (isset($_POST['btn-donate'])) {
     if (empty($_POST['quantity'])) {
         $errors[] = "Food quantity is required";
         /*regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp*/
-    } elseif (!(preg_match('/[a-z0-9 ]+$/', $_POST['quantity']))) {
+    } elseif (!(preg_match('/[a-zA-Z0-9 ]+$/', $_POST['quantity']))) {
         /* end of reference */
         $errors[] = "Invalid Food quantity. Only letters and numbers are accepted";
     } else {
@@ -95,7 +95,8 @@ if (isset($_POST['btn-donate'])) {
                 }
             }
             try {
-                $result = $connect->query(" INSERT INTO donations (userID,foodType,quantity,address,availDate,availTime,description) VALUES('$userID','$foodType','$quantity','$donarAddress','$date','$time','$foodDes')");
+                $postedDate=date("Y-m-d");
+                $result = $connect->query(" INSERT INTO donations (userID,foodType,foodName,quantity,address,availDate,availTime,description,postedDate) VALUES('$userID','$foodType','$foodName','$quantity','$donarAddress','$date','$time','$foodDes','$postedDate')");
 
                 if ($result == true) {
                     /*header('location:available-food.php');*/
