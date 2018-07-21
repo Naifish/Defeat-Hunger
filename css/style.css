@@ -403,6 +403,40 @@ html, body {
 
 /* End of reference Geolocation */
 
+/*Styling Donor Page*/
+
+.container-donors{
+    margin-top: 150px;
+}
+.container-donors .row{
+    margin: 50px 0px;
+    border-radius: 20px;
+    box-shadow: 4px 6px 53px 0px rgba(0, 0, 0, 0.75);
+}
+.container-donors h1{
+    color: #0076bc;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.container-donors .donor-gold, .container-donors .donor-silver, .container-donors .donor-bronze{
+    /*border-radius: 50px;*/
+    min-height: 200px;
+    background-repeat: no-repeat !important;
+    background-position: center;
+
+}
+.container-donors .donor-gold{
+    background: url("../images/gold.png");
+}
+.container-donors .donor-silver{
+    background: url("../images/silver.png");
+}
+.container-donors .donor-bronze{
+    background: url("../images/bronze.png");
+}
+
 /* ------------------------------------------------------ Responsive Design ------------------------------------------------------------ */
 
 @media only screen and (max-width: 992px) {
