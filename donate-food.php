@@ -249,15 +249,6 @@ include 'includes/footer.php';
     <?php if ($userInfoUpdate==true){ $userInfoUpdate=false; ?>
     $("#myModal").modal('show');
     <?php } ?>
-    //Reference BX Slider : https://bxslider.com
-    // [8] Steven Wanderski Chicago Web Developer "Responsive Slider". bxslider.com [Online]. Available. "https://bxslider.com".[Accessed On: 28th June 2018].
-    // Changes in default options
-    $(document).ready(function () {
-        $('.sldr').bxSlider({
-            auto: true
-        });
-        //End of BX Slider
-
 // Reference: Form Validation- https://www.sitepoint.com/basic-jquery-form-validation-tutorial/
 // [9] sitepoint.com "JQuery Validators". sitepoint.com [Online]. Available. "https://www.sitepoint.com/basic-jquery-form-validation-tutorial/".[Accessed On: 28th June 2018].
         // Modification in success method functionality and different validation fieds

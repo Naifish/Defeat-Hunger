@@ -2,9 +2,10 @@
 <html lang="en">
 <?php
 session_start();
-$id;$foodType;$quantity;$address;$availDate;$availTime;$description;
+$id;$foodType;$quantity;$address;$availDate;$availTime;$description;$status;
 $donations=Array();
 require 'includes/connection.php';
+require 'includes/reusableFunctions.php';
 
 try {
     $connect = new PDO("mysql:host=$servername;dbname=".$dbName, $username, $password);
@@ -34,44 +35,6 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage()."<br>";
 }
 
-/* Call this function when you want to show user friendly date */
-function getFriendlyDate($date){
-    //2018-07-20 to 1 Jun 2018
-    $dateArr=(explode("-",$date));
-    return $dateArr[2]." ".getFriendlyMonth($dateArr[1])." ".$dateArr[0];
-}
-function getFriendlyMonth($month)
-{
-    switch ($month) {
-        case 1:
-            return "Jan";
-        case 2:
-            return "Feb";
-        case 3:
-            return "Mar";
-        case 4:
-            return "Apr";
-        case 5:
-            return "May";
-        case 6:
-            return "Jun";
-        case 7:
-            return "Jul";
-        case 8:
-            return "Aug";
-        case 9:
-            return "Sep";
-        case 10:
-            return "Oct";
-        case 11:
-            return "Nov";
-        case 12:
-            return "Dec";
-        default:
-            return $month;
-    }
-}
-
 
 
 
@@ -96,14 +59,14 @@ require 'includes/header.php';
 <div class="container food-list">
     <ul>
         <?php if (count($donations)>0){ foreach ($donations as $food){ ?>
-        <li data-foodType="<?php echo $food->foodType; ?>"><h3><?php echo $food->foodName; ?></h3><span class="locationFood"><i
+        <li data-foodType="<?php echo $food->foodType; ?>"><h3><?php echo $food->foodName; ?><span>(<?php echo $food->quantity; ?>)</span></h3><span class="locationFood"><i
                         class="glyphicon glyphicon-map-marker"></i> <?php echo $food->address; ?></span>
             <hr>
             <p><?php echo $food->description; ?></p><span><i class="glyphicon glyphicon-time"></i> Posted on <?php echo getFriendlyDate($food->postedDate); ?> |</span><span> Get before <?php echo getFriendlyDate($food->availDate);
             $timeArr=explode(":",$food->availTime); echo " ".$timeArr[0].":".$timeArr[1];?>
             </span>
             <div></div>
-            <a href="get-food.php?id=<?php echo $food->id; ?>" class="btn btn-get-food">Get Food</a></li>
+            <?php if ($food->status=='unavailable'){ ?> <button class="btn btn-get-food" disabled>Unavailable</button> <?php } else{ ?><a href="get-food.php?id=<?php echo $food->id; ?>" class="btn btn-get-food">Get Food</a><?php } ?></li>
         <?php }} else { echo "<h1>Food not available. Please come later.</h1>"; } ?>
     </ul>
 </div>
