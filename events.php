@@ -54,7 +54,7 @@ Added the shadow to improve the UX for the user by adding bootstrap shadow class
     ?>
     <p><i class="fa fa-clock-o" aria-hidden="true"></i> Event Begins At: <?php echo getFriendlyDate($singleEvent->startDate); ?> <?php echo "  ".$sTime[0].":".$sTime[1]; ?></p>
     <p><i class="fa fa-clock-o" aria-hidden="true"></i> Collection Time Ends At: <?php echo getFriendlyDate($singleEvent->endDate); ?> <?php echo  " ".$eTime[0].":".$eTime[1]; ?></p>
-    <?php if ($singleEvent->status=='unavailable'){ ?> <button class="btn btn-get-food" disabled>Unavailable</button> <?php } else{ ?><a href="get-event.php?id=<?php echo $singleEvent->id; ?>" class="btn btn-primary">Get Event</a><?php } ?>
+    <?php if ($singleEvent->status=='unavailable'){ ?> <button class="btn btn-get-food" disabled>Unavailable</button> <?php } else{ ?><a href="get-event.php?id=<?php echo $singleEvent->id; ?>" class="btn btn-primary">Register for this event</a><?php } ?>
 </div>
 <?php }} else { echo "<h1>Events unavailable. Please come later.</h1>"; } ?>
 

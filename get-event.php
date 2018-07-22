@@ -86,7 +86,7 @@ require 'includes/header.php';
 
                 <form action="#" method="post">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="submit" class="btn btn-get-event" name="btn-get-event" value="Get Food" >
+                    <input type="submit" class="btn btn-get-event" name="btn-get-event" value="Register" >
                 </form>
             </li>
             </ul>
