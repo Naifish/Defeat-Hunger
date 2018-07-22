@@ -7,6 +7,8 @@ $donations=Array();
 require 'includes/connection.php';
 require 'includes/reusableFunctions.php';
 
+/* Reference: Advance Web development course summer 2018. Done by Naifish Ali */
+
 try {
     $connect = new PDO("mysql:host=$servername;dbname=".$dbName, $username, $password);
     $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -35,7 +37,7 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage()."<br>";
 }
 
-
+/* End of Reference */
 
 
 require 'includes/header.php';
@@ -73,7 +75,7 @@ require 'includes/header.php';
 <!--  End of UI Idea  -->
 <?php include 'includes/footer.php'; ?>
 <script>
-    // [11] codepen.io "Dropdown filter Divs". codepen.io [Online]. Available. "https://codepen.io/ericrasch/pen/zjDBx".[Accessed On: 28th June 2018].
+    // [9] codepen.io "Dropdown filter Divs". www.codepen.io [Online]. Available. "https://codepen.io/ericrasch/pen/zjDBx".[Accessed On: 28th June 2018].
     // Modification: Selection of elements
     $(".food-type-select").change(function () {
         var selectedFoodType = this.options[this.selectedIndex].value;

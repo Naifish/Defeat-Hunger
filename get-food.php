@@ -5,6 +5,9 @@ session_start();
 $id;$foodType;$quantity;$foodName;$address;$availDate;$availTime;$description;$postedDate;$donationInfoUpdate=false;
 require 'includes/connection.php';
 require 'includes/reusableFunctions.php';
+
+/* Reference: Advance Web development course summer 2018. Done by Naifish Ali */
+
 if(!isset($_SESSION) || empty($_SESSION['email'])){ header('location:login.php');}
 
 
@@ -66,11 +69,11 @@ if (isset($_POST['btn-get-food'])){
     }
 }
 
-
+/* End of Reference */
 
 require 'includes/header.php';
 ?>
-      <!-- Reference from https://www.w3schools.com/howto/howto_css_contact_section.asp -->
+<!-- [10] w3schools.com "Google Map display". www.w3schools.com [Online]. Available. "https://www.w3schools.com/howto/howto_css_contact_section.asp".[Accessed On: 28th June 2018]. -->
 <div class="container get-food">
     <input id="address" type="hidden" value="<?php echo $address; ?>">
             <ul>
@@ -115,7 +118,7 @@ require 'includes/header.php';
     </div>
 </div>
 <?php include 'includes/footer.php';?>
-<!-- [14] www.google.com "Geo locator". developers.google.com [Online]. Available. "https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple".[Accessed On: 04th July 2018]. -->
+<!-- [11] www.google.com "Geo locator". developers.google.com [Online]. Available. "https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple".[Accessed On: 04th July 2018]. -->
 <script>
     <?php if ($donationInfoUpdate==true){ $donationInfoUpdate=false; ?>
     $("#myModal").modal('show');
