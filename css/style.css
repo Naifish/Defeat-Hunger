@@ -428,12 +428,15 @@ html, body {
 
 }
 .container-donors .donor-gold{
+/*Image URL: https://pngtree.com/freepng/medals_541578.html*/
     background: url("../images/gold.png");
 }
 .container-donors .donor-silver{
+    /*Image URL: https://pngtree.com/freepng/medals_541578.html*/
     background: url("../images/silver.png");
 }
 .container-donors .donor-bronze{
+    /*Image URL: https://pngtree.com/freepng/medals_541578.html*/
     background: url("../images/bronze.png");
 }
 

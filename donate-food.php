@@ -31,7 +31,7 @@ if (isset($_POST['btn-donate'])) {
 
     if (empty($_POST['quantity'])) {
         $errors[] = "Food quantity is required";
-        /*regex for email address is taken from https://www.w3schools.com/tags/att_input_pattern.asp*/
+        /* [1] w3schools.com "Regex for email address". w3schools.com [Online]. Available. "https://www.w3schools.com/tags/att_input_pattern.asp".[Accessed On: 19th July 2018]. */
     } elseif (!(preg_match('/[a-zA-Z0-9 ]+$/', $_POST['quantity']))) {
         /* end of reference */
         $errors[] = "Invalid Food quantity. Only letters and numbers are accepted";
@@ -47,7 +47,7 @@ if (isset($_POST['btn-donate'])) {
 
     if (empty($_POST['date'])) {
         $errors[] = "Food availability date is required";
-        /*regex for date is taken from https://www.regextester.com/96222 */
+        /* [2] regextester.com "Regex for Date". www.regextester.com [Online]. Available. "https://www.regextester.com/96222".[Accessed On: 19th July 2018]. */
     } elseif (!(preg_match('/^((19|20)\d{2})-((0|1)\d{1})-((0|1|2|3)\d{1})/', $_POST['date']))) {
         /* end of reference */
         $errors[] = "Invalid food availability date.";
@@ -57,7 +57,7 @@ if (isset($_POST['btn-donate'])) {
 
     if (empty($_POST['time'])) {
         $errors[] = "Food availability time is required";
-        /*regex for date is taken from https://stackoverflow.com/questions/7536755/regular-expression-for-matching-hhmm-time-format/7536768 */
+        /* [3] stackoverflow.com "Regex for Time". www.stackoverflow.com [Online]. Available. "hhttps://stackoverflow.com/questions/7536755/regular-expression-for-matching-hhmm-time-format/7536768".[Accessed On: 19th July 2018]. */
     } elseif (!(preg_match('/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/', $_POST['time']))) {
         /* end of reference */
         $errors[] = "Invalid food availability time.";
@@ -87,7 +87,6 @@ if (isset($_POST['btn-donate'])) {
                 die("Error in execution of query:" . $ex);
             }
 
-
             if ($getUserID->rowCount() > 0) {
                 while ($row = $getUserID->fetch()) {
                     $userID = $row['id'];
@@ -99,8 +98,6 @@ if (isset($_POST['btn-donate'])) {
                 $result = $connect->query(" INSERT INTO donations (userID,foodType,foodName,quantity,address,availDate,availTime,description,postedDate) VALUES('$userID','$foodType','$foodName','$quantity','$donarAddress','$date','$time','$foodDes','$postedDate')");
 
                 if ($result == true) {
-                    /*header('location:available-food.php');*/
-
                     /* Updade number of donations done by this user */
                     if (!isset($numOfDonations)){
                         $numOfDonations=0;
@@ -136,7 +133,7 @@ if (isset($_POST['btn-donate'])) {
 }
 
 
-/* Reference code W3school. Available: https://www.w3schools.com/php/php_form_validation.asp */
+/* [4] w3schools.com "Convert input to proper HTML entities". www.w3schools.com [Online]. Available. "https://www.w3schools.com/php/php_form_validation.asp".[Accessed On: 19th July 2018]. */
 function checkInput($val)
 {
     $val = trim($val);
@@ -214,7 +211,7 @@ require 'includes/header.php';
             </div>
         </form>
     </section>
-    <!-- Reference: Bootstrap Modal - https://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
+    <!-- [5] w3schools.com "Bootstrap Modal". www.w3schools.com [Online]. Available. "https://www.w3schools.com/bootstrap/bootstrap_modal.asp".[Accessed On: 19th July 2018].-->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -250,7 +247,7 @@ include 'includes/footer.php';
     $("#myModal").modal('show');
     <?php } ?>
 // Reference: Form Validation- https://www.sitepoint.com/basic-jquery-form-validation-tutorial/
-// [9] sitepoint.com "JQuery Validators". sitepoint.com [Online]. Available. "https://www.sitepoint.com/basic-jquery-form-validation-tutorial/".[Accessed On: 28th June 2018].
+// [6] sitepoint.com "JQuery Validators". www.sitepoint.com [Online]. Available. "https://www.sitepoint.com/basic-jquery-form-validation-tutorial/".[Accessed On: 28th June 2018].
         // Modification in success method functionality and different validation fieds
         $(function () {
             $("form[name='form-donate']").validate({
@@ -280,17 +277,16 @@ include 'includes/footer.php';
             });
         });
 // End of Form Validation
-    });
 </script>
 <!-- Reference Geolocation : https://developers.google.com/maps/documentation/javascript/examples/places-searchbox -->
-<!-- [10] developers.google.com "Autocomplete Geolocation". google.com [Online]. Available. "https://developers.google.com/maps/documentation/javascript/examples/places-searchbox".[Accessed On: 28th June 2018]. -->
+<!-- [7] developers.google.com "Autocomplete Geolocation". www.google.com [Online]. Available. "https://developers.google.com/maps/documentation/javascript/examples/places-searchbox".[Accessed On: 28th June 2018]. -->
 <!-- Modification: position of actual autofill textbox and coordinates of the default location -->
 <script src="js/donate-food-map.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvWZqtPJD4meUjubfkecOeAJuB-sjI56M&libraries=places&callback=initAutocomplete"
         async defer></script>
 <!-- End of reference Geolocation -->
 
-<!-- [9] sitepoint.com "JQuery Validators". sitepoint.com [Online]. Available. "https://www.sitepoint.com/basic-jquery-form-validation-tutorial/".[Accessed On: 28th June 2018]. -->
+<!-- [8] sitepoint.com "JQuery Validators". www.sitepoint.com [Online]. Available. "https://www.sitepoint.com/basic-jquery-form-validation-tutorial/".[Accessed On: 28th June 2018]. -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <!-- End of Jquery validation -->
 
