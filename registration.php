@@ -84,7 +84,8 @@ if (isset($_POST['btn-signup'])){
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
                         $_SESSION['email'] = $email;
-
+                        $_SESSION['name']=$name;
+                        
                         header('location:available-food.php');
                     }
                 }
