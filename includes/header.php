@@ -51,7 +51,13 @@ if (isset($_GET['logout']) && $_GET['logout']==true){
             </ul>
 
             <ul class="nav navbar-right nav-btns">
-                <?php if(isset($_SESSION) && !empty($_SESSION['email'])){ ?>
+                <?php if(isset($_SESSION) && !empty($_SESSION['email']) && !empty($_SESSION['name'])){ ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name'] ?> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo htmlspecialchars('my-donations.php');?>" class="my-donations">My Donations</a></li>
+                        </ul>
+                    </li>    
                     <li><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?logout=true" class="btn btn-success navbar-btn">Logout</a></li>
                 <?php } else { ?>
                     <li><a href="login.php" class="btn btn-success navbar-btn">SignIn</a></li>

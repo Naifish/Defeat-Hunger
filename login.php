@@ -40,6 +40,7 @@ if (isset($_POST['btn-login'])){
 
                 $result = $checkStatement->fetch(PDO::FETCH_ASSOC);
                 $name=$result['name'];
+                $id=$result['id'];
                 if(password_verify($pass, $result['pass'])) {
 
                     /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
@@ -52,6 +53,7 @@ if (isset($_POST['btn-login'])){
                     $_SESSION['URS_AGNT']=md5($_SERVER['HTTP_USER_AGENT']);
                     $_SESSION['email'] = $email;
                     $_SESSION['name']=$name;
+                    $_SESSION['id']=$id;
 
                     header('location:index.php?status=login');
                 }else{
