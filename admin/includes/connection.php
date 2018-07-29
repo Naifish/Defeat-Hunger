@@ -1,8 +1,8 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbName = "test";
+$servername = "db.cs.dal.ca";
+$username = "naifish";
+$password = "B00775588";
+$dbName = "naifish";
 
 ?>

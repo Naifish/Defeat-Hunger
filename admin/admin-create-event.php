@@ -21,7 +21,7 @@ if(isset($_POST['submitEvent']))
   try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username,$password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("INSERT INTO events (id, eventName, venue, description, startDate, startTime, endDate, endTime)
+            $stmt = $conn->prepare("INSERT INTO events (userID, eventName, venue, description, startDate, startTime, endDate, endTime)
     VALUES ('$userID', '$evenName', '$eventAddress', '$eventDescription', '$startDate', '$startTime', '$endDate', '$endTime')");
             $stmt->execute();
             $successFlag = true;

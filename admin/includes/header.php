@@ -56,7 +56,7 @@ if (isset($_GET['logout']) && $_GET['logout']==true){
                     <li><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?logout=true" class="btn btn-success navbar-btn">Logout</a></li>
                 <?php } else { ?>
                     <li><a href="../admin-login.php" class="btn btn-success navbar-btn">SignIn</a></li>
-                    <li><a href="registration.php" class="btn btn-warning navbar-btn">Sign Up</a></li>
+                    <li><a href="../registration.php" class="btn btn-warning navbar-btn">Sign Up</a></li>
                 <?php } ?>
             </ul>
         </div>
