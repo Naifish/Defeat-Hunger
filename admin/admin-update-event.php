@@ -2,7 +2,8 @@
 <html lang="en">
 <?php
 session_start();
-require 'includes/connection.php';
+if(!isset($_SESSION) || empty($_SESSION['email']) || $_SESSION['userType']!= "admin"){ header('location:admin-login.php');}
+require '../includes/connection.php';
 if(isset($_POST['rejectButton']))
 {
     $eid = $_GET['id'];
@@ -127,6 +128,6 @@ require 'includes/header.php';
         </form>
     </div>
     </div>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>

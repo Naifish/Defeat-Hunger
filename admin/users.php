@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require 'includes/connection.php';
-require 'includes/reusableFunctions.php';
+require '../includes/connection.php';
+require '../includes/reusableFunctions.php';
 session_start();
+if(!isset($_SESSION) || empty($_SESSION['email']) || $_SESSION['userType']!= "admin"){ header('location:admin-login.php');}
 $usersList=Array();
 
 if(isset($_POST['addAdmin'])) {
@@ -71,15 +72,31 @@ require 'includes/header.php';
 ?>
 <!-- Reference from https://www.w3schools.com/howto/howto_css_contact_section.asp -->
 
-<div class="container container-donors">
+<div class="container container-donors container-users">
     <h1>All Users</h1>
 
         <ul>
-            <?php if (count($usersList)>0){ foreach ($usersList as $userField){ ?>
+            <?php if (count($usersList)>0){ foreach ($usersList as $userField){
+
+                $donorClass='';
+                $donorType='';
+                if ($userField->numOfDonations<=1){
+                    $donorClass='donor-bronze';
+                    $donorType='Bronze';
+                }
+                elseif($userField->numOfDonations<=2){
+                    $donorClass='donor-silver';
+                    $donorType='Silver';
+                }
+                elseif($userField->numOfDonations>=5){
+                    $donorClass='donor-gold';
+                    $donorType='Gold';
+                }
+             ?>
             <li>
                 <div class="row">
         <!-- Image URL: https://pngtree.com/freepng/medals_541578.html -->
-                <div class="col-md-2 donor-silver"></div>
+                <div class="col-md-2 <?php echo $donorClass; ?>"></div>
         <div class="col-md-7">
             <h2>Name: <?php echo $userField->name;?></h2>
             <h3>Contact: <?php echo $userField->contact;?></h3>
@@ -99,6 +116,6 @@ require 'includes/header.php';
             </li> <?php }} else { echo "<h1>No Users available now.</h1>"; }?>
         </ul>
 </div>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>
