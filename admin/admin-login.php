@@ -6,7 +6,7 @@ if(isset($_SESSION) && !empty($_SESSION['email'])){ header('location:../index.ph
 elseif (isset($_SESSION) && !empty($_SESSION['email']) && $_SESSION['userType']== "admin") {header('location:admin-index.php');}
 
 $email;$pass;$errors;$arrLength=0;$name;
-require 'includes/connection.php';
+require '../includes/connection.php';
 
 if (isset($_POST['btn-login'])){
     $errors=array();
@@ -41,7 +41,7 @@ if (isset($_POST['btn-login'])){
 
                 $result = $checkStatement->fetch(PDO::FETCH_ASSOC);
                 $name=$result['name'];
-                if($pass == $result['pass']) {
+                if(password_verify($pass, $result['pass'])) {
 
                     /* Reference: https://www.youtube.com/watch?v=KnX0p2Ey3Ek */
                     session_set_cookie_params(time()+700,'/',$servername,false,true);
@@ -114,7 +114,7 @@ function checkInput($val) {
     </section>
     <!-- End of Reference: Assignment 1 -->
 </div>
-<?php include 'includes/footer.php';?>
+<?php include '../includes/footer.php';?>
 
 </body>
 </html>

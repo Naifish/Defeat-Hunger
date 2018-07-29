@@ -40,7 +40,7 @@ if (isset($_GET['logout']) && $_GET['logout']==true){
                 <span class="icon-bar"></span>
             </button>
             <!-- End of Responsive Nav Bar -->
-            <a class="navbar-brand" href="index.php"><span>Defeat</span> Hunger</a>
+            <a class="navbar-brand" href="../index.php"><span>Defeat</span> Hunger</a>
         </div>
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -55,8 +55,8 @@ if (isset($_GET['logout']) && $_GET['logout']==true){
                     <li><label class ="user-name"><?php echo $_SESSION['name'];?></label></li>
                     <li><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?logout=true" class="btn btn-success navbar-btn">Logout</a></li>
                 <?php } else { ?>
-                    <li><a href="../admin-login.php" class="btn btn-success navbar-btn">SignIn</a></li>
-                    <li><a href="registration.php" class="btn btn-warning navbar-btn">Sign Up</a></li>
+                    <li><a href="admin-login.php" class="btn btn-success navbar-btn">SignIn</a></li>
+                    <li><a href="../registration.php" class="btn btn-warning navbar-btn">Sign Up</a></li>
                 <?php } ?>
             </ul>
         </div>

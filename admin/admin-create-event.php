@@ -6,7 +6,7 @@ if(!isset($_SESSION) || empty($_SESSION['email'])|| $_SESSION['userType']!= "adm
 
 $userID = $_SESSION['userID'];
 require 'includes/header.php';
-require 'includes/connection.php';
+require '../includes/connection.php';
 if(isset($_POST['submitEvent']))
 { 
  
@@ -21,7 +21,7 @@ if(isset($_POST['submitEvent']))
   try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username,$password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("INSERT INTO events (id, eventName, venue, description, startDate, startTime, endDate, endTime)
+            $stmt = $conn->prepare("INSERT INTO events (userID, eventName, venue, description, startDate, startTime, endDate, endTime)
     VALUES ('$userID', '$evenName', '$eventAddress', '$eventDescription', '$startDate', '$startTime', '$endDate', '$endTime')");
             $stmt->execute();
             $successFlag = true;
@@ -88,7 +88,7 @@ The code wasn't much significantly modified, I removed all the unnecessary styli
         async defer></script>
 <script src="../js/donate-food-map.js"></script>
 <!-- Footer-->
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 
 </body>
 </html>

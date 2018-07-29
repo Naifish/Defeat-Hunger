@@ -4,8 +4,8 @@
 session_start();
 $eventList=Array();
 if(!isset($_SESSION) || empty($_SESSION['email']) || $_SESSION['userType']!= "admin"){ header('location:admin-login.php');}
-require 'includes/connection.php';
-require 'includes/reusableFunctions.php';
+require '../includes/connection.php';
+require '../includes/reusableFunctions.php';
 
 try {
     $connect = new PDO("mysql:host=$servername;dbname=".$dbName, $username, $password);
@@ -58,7 +58,7 @@ Added the shadow to improve the UX for the user by adding bootstrap shadow class
     </ul>
 </div>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 
 </body>
 </html>

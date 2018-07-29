@@ -35,7 +35,7 @@ if(!isset($_SESSION) || empty($_SESSION['email']) ||  $_SESSION['userType']!="ad
 </div>
 
 <div style="margin-top: 250px"></div>
-<?php include 'includes/footer.php';?>
+<?php include '../includes/footer.php';?>
 
 </body>
 </html>
