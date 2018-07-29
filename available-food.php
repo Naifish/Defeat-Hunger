@@ -45,9 +45,8 @@ require 'includes/header.php';
 <!--  UI Idea: http://www.jobscan.ae/jobsearch/  -->
 <div class="available-food-container container">
     <h1>Find Food</h1>
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam
-        libero est, feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis
-        urna pretium, gravida nisl ut, semper nisi. Nunc eu fermentum leo.</p>
+    <p class="lead">Please select the type of food from the list of all the available donated food</p>
+    <p class="lead">Grab a chance to avail it before it gets unavailable.</p>
     <form>
         <select class="food-type-select">
             <option value="all">All Food Types</option>
