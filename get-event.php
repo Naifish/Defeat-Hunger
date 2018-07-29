@@ -41,7 +41,7 @@ if (isset($_GET['id'])){
 }
 
 if (isset($_POST['btn-get-event'])){
-    $id=$_POST['id'];
+   /* $id=$_POST['id'];
     try {
         $conn = new PDO("mysql:host=$servername;dbname=".$dbName, $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -60,7 +60,9 @@ if (isset($_POST['btn-get-event'])){
         }
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage() . "<br>";
-    }
+    }*/
+
+    $eventRegistered = true;
 }
 
 
@@ -86,7 +88,7 @@ require 'includes/header.php';
 
                 <form action="#" method="post">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="submit" class="btn btn-get-event" name="btn-get-event" value="Register" >
+                    <input type="submit" class="btn btn-get-food" name="btn-get-event" value="Register" >
                 </form>
             </li>
             </ul>
