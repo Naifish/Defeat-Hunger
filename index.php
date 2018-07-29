@@ -24,7 +24,7 @@ require 'includes/header.php';
             Added text to the image to match the headings-->
             <p><img class="imgs rounded-circle" src="images/d31.jpg" alt="Blank image"></p>
             <h2 class="fonts-lucky">Donate Food</h2>
-            <p class="services">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p class="services">Help us fight hunger by donating the food. Together we can fight to defeat hunger! </p>
             <p class="btn-services"><a class="btn btn-primary" href="donate-food.php" role="button">Donate Food</a></p>
         </div>
 
@@ -35,7 +35,7 @@ require 'includes/header.php';
             Added text to the image to match the headings-->
             <p><img class="imgs rounded-circle" src="images/event.png" alt="Blank image"></p>
             <h2 class="fonts-lucky">Events</h2>
-            <p class="services">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p class="services">Check all the events happening around you and register for an event if you are interested!</p>
             <p class="btn-services"><a class="btn btn-success" href="events.php" role="button">Register for Event</a></p>
         </div>
 
@@ -46,21 +46,14 @@ require 'includes/header.php';
             Added text to the image to match the headings-->
             <p><img class="imgs rounded-circle" src="images/finds.jpg" alt="Blank image"></p>
             <h2 class="fonts-lucky">Find Food</h2>
-            <p class="services">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p class="services">Seeking for the food? Grab a chance to avail the food before it becomes unavailable  </p>
             <p class="btn-services"><a class="btn btn-warning" href="available-food.php" role="button">Find Food</a></p>
         </div>
     </div>
 </div>
 <div class="container what-we-do">
     <h1>What we do</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper pellentesque magna. Aliquam libero est,
-        feugiat sed sapien eu, rhoncus sodales mi. Nullam scelerisque eget ipsum a maximus. Vivamus quis urna pretium,
-        gravida nisl ut, semper nisi. Nunc eu fermentum leo. Suspendisse pretium lectus erat, at cursus leo gravida id.
-        Fusce eu ex at dui aliquet egestas id quis justo. Suspendisse vehicula ante nisi, vitae sagittis libero maximus
-        eget. Sed vel arcu in augue sollicitudin aliquet. Etiam eu ante eu tortor congue cursus. Phasellus non sapien
-        porttitor, facilisis erat ac, consectetur enim. Donec eget nisi tellus. Nam dignissim consequat lobortis.
-        Aliquam arcu ipsum, commodo non aliquet id, dignissim id turpis. Nullam feugiat pharetra elit, vitae scelerisque
-        neque egestas commodo. Fusce et ornare dui dui.</p>
+    <p>The problem of food wastage is a huge issue of concern as we see a lot food being wasted daily. There are many people who are underprivileged and suffer from hunger. The goal of our Defeat Hunger by saving the food which is likely to get wasted. Our application would have a wide range of users staring from an individual who is in genuine need of food to an organization that can further distribute food to shelters, homeless and international students. Donors can post about the available food with the help of a form and anyone who is need of food can get access to that food by clicking on the post and following further instructions. Our application aims at filling the gap between the food donors and the food seekers.</p>
 </div>
 <?php include 'includes/footer.php';?>
 <script>
