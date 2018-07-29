@@ -16,7 +16,7 @@ if(isset($_POST['replyButton'])) {
 
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username);
+        $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $conn->prepare("UPDATE queries SET uReply='$newComment', uReplied = 'Yes' WHERE qID = $qid");
         $stmt->execute();
