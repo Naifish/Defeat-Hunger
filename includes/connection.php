@@ -1,13 +1,13 @@
 <?php
 
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "";
-$dbName = "defeathunger";
+$dbName = "defeathunger";*/
 
-/*$servername = "db.cs.dal.ca";
+$servername = "db.cs.dal.ca";
 $username = "naifish";
 $password = "B00775588";
-$dbName = "naifish";*/
+$dbName = "naifish";
 
 ?>
