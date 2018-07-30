@@ -69,15 +69,38 @@ body {
     float: left;
 }
 
-.nav-btns li a:hover {
+.nav-btns li .no-child:hover {
     background-color: #842380;
     color: #fff !important;
     border: 1px solid #fff;
 }
 
-.nav-btns li a {
+.nav-btns li .no-child {
     font-size: 14px;
     font-weight: normal;
+}
+.dropdown-toggle{
+    color: #000d1a !important;
+}
+.my-donations{
+    color: #000d1a !important;
+}
+
+.dropdown{
+    margin-top: 7px !important;
+    height: 20px;
+}
+
+.dropdown, .dropdown-menu{
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    border-radius: 5px;
+}
+.dropdown-toggle{
+    border-radius: 5px;
+}
+.dropdown-menu>li>a, .dropdown-toggle{
+    background-color: #5cb85c !important;
 }
 
 .full-width {
