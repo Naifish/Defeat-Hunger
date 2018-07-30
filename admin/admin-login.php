@@ -54,6 +54,7 @@ if (isset($_POST['btn-login'])){
                     $_SESSION['email'] = $email;
                     $_SESSION['name']=$name;
                     $_SESSION['userID'] = $result['id'];
+                    $_SESSION['id'] = $result['id'];
                     $_SESSION['userType']= $result['type'];
 
                     header('location:admin-index.php');
