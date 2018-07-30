@@ -39,12 +39,14 @@ require 'includes/header.php';
     <h3>Contact Us</h3>
     <div class="row">
         <div class="col-md-6">
-            <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit,</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
-                <p><h4><a href="contact-us.php"><u>abc@dal.ca</u></a></h4></p>
+           <div>
+                <h2>Address</h2>
+                <p><i>534, South Park Street</i> </p>
+                <p><i>Halifax, Nova Scotia , B3H1R2</i></p>
+                <h4>Let's Talk</h4>
+                <p><i>902-789-5926</i></p>
+                <h4>Or Email us at</h4>
+                <p><h4><a href="contact-us.php"><u><i>cooltani999@gmail.com</i></u></a></h4></p>
             </div>
         </div>
         <div class="col-md-6">
