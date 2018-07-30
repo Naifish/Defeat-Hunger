@@ -46,7 +46,7 @@ Added the shadow to improve the UX for the user by adding bootstrap shadow class
 ?>
 <div class="container border-container">
     <h2 class="fonts-lucky"><?php echo $singleEvent->eventName; ?></h2>
-    <p class="wt"><i class="fa fa-map-marker" aria-hidden="true"></i><?php echo $singleEvent->venue; ?></p>
+    <p class="wt"><i class="fa fa-map-marker" aria-hidden="true"></i><?php echo " "$singleEvent->venue; ?></p>
     <p><i class="fa fa-sticky-note" aria-hidden="true"></i> Description of Food: <?php echo $singleEvent->description; ?></p>
     <?php 
     $sTime=explode(":",$singleEvent->startTime);
