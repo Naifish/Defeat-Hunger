@@ -88,7 +88,7 @@ The code wasn't much significantly modified, I removed all the unnecessary styli
         async defer></script>
 <script src="../js/donate-food-map.js"></script>
 <!-- Footer-->
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 </body>
 </html>

@@ -114,7 +114,7 @@ function checkInput($val) {
     </section>
     <!-- End of Reference: Assignment 1 -->
 </div>
-<?php include '../includes/footer.php';?>
+<?php include 'includes/footer.php';?>
 
 </body>
 </html>

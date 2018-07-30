@@ -116,6 +116,6 @@ require 'includes/header.php';
             </li> <?php }} else { echo "<h1>No Users available now.</h1>"; }?>
         </ul>
 </div>
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 </body>
 </html>

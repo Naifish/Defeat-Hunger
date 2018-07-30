@@ -53,7 +53,7 @@ Added the shadow to improve the UX for the user by adding bootstrap shadow class
     </ul>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 </body>
 </html>
